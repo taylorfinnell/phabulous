@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://192.168.0.3:8081/api/conduit.connect
+    body:
+      encoding: UTF-8
+      string: params=%7B%22client%22%3A%22phabulous%20gem%22%2C%22clientVersion%22%3A%221.0.0%22%2C%22user%22%3A%22user%22%2C%22host%22%3A%22http%3A%2F%2F192.168.0.3%3A8081%22%2C%22authToken%22%3A1423413093%2C%22authSignature%22%3A%22715f8e08155d050c39737df0407b9be87fca516e%22%7D&output=json
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 08 Feb 2015 16:31:33 GMT
+      Server:
+      - Apache
+      X-Frame-Options:
+      - Deny
+      - SAMEORIGIN
+      X-Powered-By:
+      - PHP/5.4.36
+      Set-Cookie:
+      - phsid=A%2Fyxqszmq2w3xmcki4dfhnus4j65qx3jrcyb3rohfs; expires=Fri, 07-Feb-2020
+        16:31:33 GMT; path=/; domain=192.168.0.3; httponly
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Content-Type-Options:
+      - nosniff
+      Content-Length:
+      - '167'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"result":{"connectionID":297,"sessionKey":"waer6g27yfqqkskab6scv4yfgxwmlh6gr5fvdu6w","userPHID":"PHID-USER-5n7wioucvsnwyi3yvplu"},"error_code":null,"error_info":null}'
+    http_version: 
+  recorded_at: Sun, 08 Feb 2015 16:31:33 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,392 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://fake.com/api/conduit.ping
+    body:
+      encoding: UTF-8
+      string: params=%7B%7D&output=json
+    headers:
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '0'
+      Content-Type:
+      - text/html
+      Location:
+      - http://www.fake.com/api/conduit.ping
+      Server:
+      - Microsoft-IIS/7.5
+      Set-Cookie:
+      - ASPSESSIONIDQCASCCDT=OJONCFCDBDHNMCLKEMOIFOGF; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 08 Feb 2015 16:32:43 GMT
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Sun, 08 Feb 2015 16:31:32 GMT
+- request:
+    method: get
+    uri: http://www.fake.com/api/conduit.ping
+    body:
+      encoding: UTF-8
+      string: params=%7B%7D&output=json
+    headers:
+      Content-Type:
+      - application/json
+      Cookie:
+      - ASPSESSIONIDQCASCCDT=OJONCFCDBDHNMCLKEMOIFOGF
+  response:
+    status:
+      code: 302
+      message: Object moved
+    headers:
+      Cache-Control:
+      - private
+      Content-Length:
+      - '122'
+      Content-Type:
+      - text/html
+      Location:
+      - "/"
+      Server:
+      - Microsoft-IIS/8.0
+      Set-Cookie:
+      - ASPSESSIONIDQSCQDQAT=HDIHFLEDPNFLNMAJELLMHMMG; path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 08 Feb 2015 16:31:31 GMT
+    body:
+      encoding: UTF-8
+      string: |
+        <head><title>Object moved</title></head>
+        <body><h1>Object Moved</h1>This object may be found <a HREF="/">here</a>.</body>
+    http_version: 
+  recorded_at: Sun, 08 Feb 2015 16:31:32 GMT
+- request:
+    method: get
+    uri: http://www.fake.com/
+    body:
+      encoding: UTF-8
+      string: params=%7B%7D&output=json
+    headers:
+      Content-Type:
+      - application/json
+      Cookie:
+      - ASPSESSIONIDQCASCCDT=OJONCFCDBDHNMCLKEMOIFOGF; ASPSESSIONIDQSCQDQAT=HDIHFLEDPNFLNMAJELLMHMMG
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=604800
+      Content-Type:
+      - text/html
+      Last-Modified:
+      - Tue, 08 Jan 2013 17:15:52 GMT
+      Accept-Ranges:
+      - bytes
+      Etag:
+      - '"0d48acfc3edcd1:0"'
+      Server:
+      - Microsoft-IIS/8.0
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 08 Feb 2015 16:31:32 GMT
+      Content-Length:
+      - '22570'
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head>\r\n<title>FAKE LANDSCAPES - the artificial plant company</title>\r\n<LINK
+        href=\"style.css\" rel=stylesheet type=text/css>\r\n<META NAME=\"DESCRIPTION\"
+        CONTENT=\"FAKE LANDSCAPES - the articicial plant company\">\r\n<META NAME=\"KEYWORDS\"
+        CONTENT=\"flowers,orchids,trees,plants,fruit,pots,bonsai,boxwood topiary,fake,silk\">\r\n<meta
+        http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\">\r\n<meta
+        http-equiv=\"Content-Language\" content=\"en-gb\">\r\n<meta name=\"AUTHOR\"
+        content=\"http://www.UKWEBSITES.net\">\r\n<meta name=\"robots\" content=\"ALL\">\r\n<meta
+        name=\"resource-type\" content=\"document\">\r\n<meta name=\"rating\" content=\"General\">\r\n<meta
+        name=\"copyright\" content=\"FAKE LANDSCAPES\">\r\n<meta http-equiv=\"reply-to\"
+        content=\"info@fakelandscapes.com\">\r\n</head>\r\n\r\n<body onLoad=\"start();if(document.all)
+        {Mhome.style.color = '#FFFFFF';Mhome.style.fontWeight='bold';}\" \r\ntopmargin=\"15\"
+        leftmargin=\"10\" rightmargin=\"10\" marginheight=\"15\" \r\nmarginwidth=\"10\"
+        stylesrc=\"_private/style.htm\" background=\"images/bg-grey.gif\" bgcolor=\"#384f4f\"
+        text=\"#CCCCCC\" link=\"#FFFFFF\" vlink=\"#FFFFFF\" alink=\"#FFFFFF\">\r\n<div
+        align=\"center\">\r\n  <center>\r\n  <table border=\"0\" cellpadding=\"0\"
+        width=\"950\" cellspacing=\"0\" style=\"border-collapse: collapse\">\r\n    <tr><td
+        width='50%' align='left' valign='middle'>\r\n      <img src='images/pg-titles/home_page.gif'
+        alt='Home page' width=\"114\" height=\"26\"></td><td width='50%' align='right'>\r\n
+        \     <img border='0' src='images/logo.gif' \r\n      alt='FAKE LANDSCAPES
+        - the artificial plant company' width=\"237\" height=\"52\"></td>\r\n</tr><tr><td
+        colspan='2'><img src='images/trans-spacer.gif' height='15'></td></tr>\r\n
+        \ </table>\r\n  </center>\r\n</div>\r\n<div align=\"center\">\r\n  <center>\r\n<TABLE
+        width=\"950\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:
+        collapse\">\r\n<tr><td align=\"left\" valign=\"top\" width=\"100%\">\r\n<p
+        align=\"left\" class=\"bodyText\">Congratulations. You've found the best source
+        for top quality silk plants, trees and flowers on the web.&nbsp;<br>\r\n<br>\r\nWe're
+        based in London but work world-wide. To learn more about who we are and how
+        we work, click on the 'About us' link - otherwise just browse around the site
+        using the links or pictures to get a feel for what we do.<br>\r\n<br>\r\nThe
+        site is constantly developing, so do bookmark it and drop in every few weeks.</p>\r\n&nbsp;</td><td
+        align=\"center\">\r\n<img border=\"0\" src=\"images/trans-spacer.gif\" width=\"17\"
+        height=\"17\"></td><td align=\"center\" valign=\"top\">\r\n<script language=\"JavaScript\">\r\n<!--
+        hide this script from non-javascript-enabled browsers\r\n/* Function that
+        displays status bar messages. */\r\nfunction MM_displayStatusMsg(msgStr)  {
+        //v3.0\r\n\tstatus=msgStr; document.MM_returnValue = true;\r\n}\r\n\r\n/*
+        Functions that finds images. */\r\nfunction MM_findObj(n, d) { //v3.0\r\n
+        \ var p,i,x;  if(!d) d=document; if((p=n.indexOf(\"?\"))>0&&parent.frames.length)
+        {\r\n    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}\r\n
+        \ if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];\r\n
+        \ for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+        return x;\r\n}\r\n/* Functions that swaps images. */\r\nfunction MM_swapImage()
+        { //v3.0\r\n  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array;\r\n
+        \ if(document.all) {eval(\"M\" + a[0] + \".style.color = 'white';\");eval(\"M\"
+        + a[0] + \".style.textDecoration = 'underline';\");}\r\n  for(i=0;i<(a.length-2);i+=3)\r\n
+        \  if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src;
+        x.src=a[i+2];}\r\n}\r\n/* Functions that handle named groups. */\r\nfunction
+        MM_swapImgRestore() { //v3.0\r\nif(document.all) {eval(\"M\" + MM_swapImgRestore.arguments[0]
+        + \".style.color = '';\");eval(\"M\" + MM_swapImgRestore.arguments[0] + \".style.textDecoration
+        = '';\");}\r\n  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++)
+        x.src=x.oSrc;\r\n}\r\nfunction MM_swapImage() { //v3.0\r\n  var i,j=0,x,a=MM_swapImage.arguments;
+        document.MM_sr=new Array;\r\n  if(document.all){eval(\"M\" + a[0] + \".style.color
+        = 'white';\");eval(\"M\" + a[0] + \".style.textDecoration = 'underline';\");}\r\n
+        \ for(i=0;i<(a.length-2);i+=3)\r\n   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x;
+        if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}\r\n}\r\n/* Functions that handle
+        named groups. */\r\nfunction TM_swapImgRestore() { //v3.0\r\nvar i,x,a=document.TM_sr;
+        for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;\r\n}\r\nfunction
+        TM_swapImage() { //v3.0\r\n  var i,j=0,x,a=TM_swapImage.arguments; document.TM_sr=new
+        Array;\r\n  for(i=0;i<(a.length-2);i+=3)\r\n   if ((x=MM_findObj(a[i]))!=null){document.TM_sr[j++]=x;
+        if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}\r\n}\r\n// stop hiding -->\r\n</script>\r\n<table
+        border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"482\">\r\n  <script
+        language=\"JavaScript\">\r\n  <!-- hide \r\n  if (document.images) {\r\n  orchids_f2
+        = new Image(116 ,162); orchids_f2.src = \"images/homepg2/orchids_f2.gif\";\r\n
+        \ orchids_f1 = new Image(116 ,162); orchids_f1.src = \"images/homepg2/orchids.gif\";\r\n
+        \ boxwood_f2 = new Image(115 ,162); boxwood_f2.src = \"images/homepg2/boxwood_f2.gif\";\r\n
+        \ boxwood_f1 = new Image(115 ,162); boxwood_f1.src = \"images/homepg2/boxwood.gif\";\r\n
+        \ trees_f2 = new Image(116 ,162); trees_f2.src = \"images/homepg2/trees_f2.gif\";\r\n
+        \ trees_f1 = new Image(116 ,162); trees_f1.src = \"images/homepg2/trees.gif\";\r\n
+        \ flowers_f2 = new Image(115 ,145); flowers_f2.src = \"images/homepg2/flowers_f2.gif\";\r\n
+        \ flowers_f1 = new Image(115 ,145); flowers_f1.src = \"images/homepg2/flowers.gif\";\r\n
+        \ bonsai_f2 = new Image(116 ,144); bonsai_f2.src = \"images/homepg2/bonsai_f2.gif\";\r\n
+        \ bonsai_f1 = new Image(116 ,144); bonsai_f1.src = \"images/homepg2/bonsai.gif\";\r\n
+        \ commercial_f2 = new Image(115 ,182); commercial_f2.src = \"images/homepg2/commercial_f2.gif\";\r\n
+        \ commercial_f1 = new Image(115 ,182); commercial_f1.src = \"images/homepg2/commercial.gif\";\r\n
+        \ pots_f2 = new Image(116 ,174); pots_f2.src = \"images/homepg2/pots_f2.gif\";\r\n
+        \ pots_f1 = new Image(116 ,174); pots_f1.src = \"images/homepg2/pots.gif\";\r\n
+        \ fruit_f2 = new Image(115 ,174); fruit_f2.src = \"images/homepg2/fruit_f2.gif\";\r\n
+        \ fruit_f1 = new Image(115 ,174); fruit_f1.src = \"images/homepg2/fruit.gif\";\r\n
+        \ }\r\n  // stop hiding -->\r\n  </script>\r\n  <tr>\r\n<!-- Shim row, height
+        1. -->\r\n   <td><img src=\"images/trans-spacer.gif\" width=\"115\" height=\"1\"
+        border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\" width=\"7\"
+        height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"116\" height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"7\" height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"116\" height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"6\" height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"115\" height=\"1\" border=\"0\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        border=\"0\" width=\"1\" height=\"1\"></td>\r\n  </tr>\r\n\r\n  <tr valign=\"top\"><!--
+        row 1 -->\r\n   <td colspan=\"4\">\r\n   <img name=\"homepage3_r01_c1\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"245\" height=\"2\"></td>\r\n   <td rowspan=\"3\"><a
+        href=\"orchids.htm\" onMouseOut=\"MM_swapImgRestore('orchids');\"  onMouseOver=\"MM_displayStatusMsg('Orchids');MM_swapImage('orchids','','images/homepg2/orchids_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"orchids\" src=\"images/homepg2/orchids.gif\"
+        border=\"0\" \r\n   alt=\"Orchids\" width=\"116\" height=\"162\"></a></td>\r\n
+        \  <td rowspan=\"9\">\r\n   <img name=\"homepage3_r01_c6\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"6\" height=\"350\"></td>\r\n   <td rowspan=\"3\"><a
+        href=\"boxwood-topiary.htm\" onMouseOut=\"MM_swapImgRestore('boxwood');\"
+        \ onMouseOver=\"MM_displayStatusMsg('Boxwood topiary');MM_swapImage('boxwood','','images/homepg2/boxwood_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"boxwood\" src=\"images/homepg2/boxwood.gif\"
+        border=\"0\" \r\n   alt=\"Boxwood topiary\" width=\"115\" height=\"162\"></a></td>\r\n
+        \  <td><img src=\"images/trans-spacer.gif\" width=\"1\" height=\"2\" border=\"0\"></td>\r\n
+        \ </tr>\r\n  <tr valign=\"top\"><!-- row 2 -->\r\n   <td colspan=\"2\">\r\n
+        \  <img name=\"homepage3_r02_c1\" src=\"images/trans-spacer.gif\" \r\n   border=\"0\"
+        width=\"122\" height=\"15\"></td>\r\n   <td rowspan=\"3\"><a href=\"trees.htm\"
+        onMouseOut=\"MM_swapImgRestore('trees');\"  onMouseOver=\"MM_displayStatusMsg('Trees');MM_swapImage('trees','','images/homepg2/trees_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"trees\" src=\"images/homepg2/trees.gif\"
+        border=\"0\" alt=\"Trees\" width=\"116\" height=\"162\"></a></td>\r\n   <td
+        rowspan=\"8\">\r\n   <img name=\"homepage3_r02_c4\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"7\" height=\"348\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"1\" height=\"15\" border=\"0\"></td>\r\n  </tr>\r\n  <tr valign=\"top\"><!--
+        row 3 -->\r\n   <td><a href=\"flowers.htm\" onMouseOut=\"MM_swapImgRestore('flowers');\"
+        \ onMouseOver=\"MM_displayStatusMsg('Flowers');MM_swapImage('flowers','','images/homepg2/flowers_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"flowers\" src=\"images/homepg2/flowers.gif\"
+        border=\"0\" \r\n   alt=\"Flowers\" width=\"115\" height=\"145\"></a></td>\r\n
+        \  <td rowspan=\"7\">\r\n   <img name=\"homepage3_r03_c2\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"7\" height=\"333\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"1\" height=\"145\" border=\"0\"></td>\r\n  </tr>\r\n  <tr valign=\"top\"><!--
+        row 4 -->\r\n   <td rowspan=\"3\">\r\n   <img name=\"homepage3_r04_c1\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"115\" height=\"6\"></td>\r\n   <td rowspan=\"3\">\r\n
+        \  <img name=\"homepage3_r04_c5\" src=\"images/trans-spacer.gif\" \r\n   border=\"0\"
+        width=\"116\" height=\"6\"></td>\r\n   <td rowspan=\"3\">\r\n   <img name=\"homepage3_r04_c7\"
+        src=\"images/trans-spacer.gif\" \r\n   border=\"0\" width=\"115\" height=\"6\"></td>\r\n
+        \  <td><img src=\"images/trans-spacer.gif\" width=\"1\" height=\"2\" border=\"0\"></td>\r\n
+        \ </tr>\r\n  <tr valign=\"top\"><!-- row 5 -->\r\n   <td>\r\n   <img name=\"homepage3_r05_c3\"
+        src=\"images/trans-spacer.gif\" \r\n   border=\"0\" width=\"116\" height=\"3\"></td>\r\n
+        \  <td><img src=\"images/trans-spacer.gif\" width=\"1\" height=\"3\" border=\"0\"></td>\r\n
+        \ </tr>\r\n  <tr valign=\"top\"><!-- row 6 -->\r\n   <td rowspan=\"2\"><a
+        href=\"bonsai.htm\" onMouseOut=\"MM_swapImgRestore('bonsai');\"  onMouseOver=\"MM_displayStatusMsg('Bonsai');MM_swapImage('bonsai','','images/homepg2/bonsai_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"bonsai\" src=\"images/homepg2/bonsai.gif\"
+        border=\"0\" alt=\"Bonsai\" width=\"116\" height=\"144\"></a></td>\r\n   <td><img
+        src=\"images/trans-spacer.gif\" border=\"0\" width=\"1\" height=\"1\"></td>\r\n
+        \ </tr>\r\n  <tr valign=\"top\"><!-- row 7 -->\r\n   <td rowspan=\"3\" align=\"right\"><a
+        href=\"commercial.htm\" onMouseOut=\"MM_swapImgRestore('commercial');\"  onMouseOver=\"MM_displayStatusMsg('Commercial
+        projects');MM_swapImage('commercial','','images/homepg2/commercial_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"commercial\" src=\"images/homepg2/commercial.gif\"
+        border=\"0\" \r\n   alt=\"Commercial projects\" width=\"115\" height=\"182\"></a></td>\r\n
+        \  <td rowspan=\"2\"><a href=\"pots.htm\" onMouseOut=\"MM_swapImgRestore('pots');\"
+        \ onMouseOver=\"MM_displayStatusMsg('Pots');MM_swapImage('pots','','images/homepg2/pots_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"pots\" src=\"images/homepg2/pots.gif\"
+        border=\"0\" alt=\"Pots\" width=\"116\" height=\"174\"></a></td>\r\n   <td
+        rowspan=\"2\"><a href=\"fruit.htm\" onMouseOut=\"MM_swapImgRestore('fruit');\"
+        \ onMouseOver=\"MM_displayStatusMsg('Fruit');MM_swapImage('fruit','','images/homepg2/fruit_f2.gif',1);return
+        document.MM_returnValue\" >\r\n   <img name=\"fruit\" src=\"images/homepg2/fruit.gif\"
+        border=\"0\" alt=\"Fruit\" width=\"115\" height=\"174\"></a></td>\r\n   <td><img
+        src=\"images/trans-spacer.gif\" width=\"1\" height=\"143\" border=\"0\"></td>\r\n
+        \ </tr>\r\n  <tr valign=\"top\"><!-- row 8 -->\r\n   <td rowspan=\"2\">\r\n
+        \  <img name=\"homepage3_r08_c3\" src=\"images/trans-spacer.gif\" \r\n   border=\"0\"
+        width=\"116\" height=\"39\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"1\" height=\"31\" border=\"0\"></td>\r\n  </tr>\r\n  <tr valign=\"top\"><!--
+        row 9 -->\r\n   <td>\r\n   <img name=\"homepage3_r09_c5\" src=\"images/trans-spacer.gif\"
+        \r\n   border=\"0\" width=\"116\" height=\"8\"></td>\r\n   <td>\r\n   <img
+        name=\"homepage3_r09_c7\" src=\"images/trans-spacer.gif\" \r\n   border=\"0\"
+        width=\"115\" height=\"8\"></td>\r\n   <td><img src=\"images/trans-spacer.gif\"
+        width=\"1\" height=\"8\" border=\"0\"></td>\r\n  </tr></table>\r\n</td></tr>\r\n<tr><td
+        align=\"left\" valign=\"top\" width=\"100%\" colspan=\"3\">\r\n<!--webbot
+        bot=\"Include\" U-Include=\"_includes/tel.htm\" TAG=\"BODY\" startspan --><SCRIPT
+        LANGUAGE=\"JavaScript\"><!--\r\nvar homepage=false;\r\n//--></SCRIPT><p align=\"center\"
+        class='bodyText'><br>for more information and friendly advice just call us
+        on <font color=\"#FFFFFF\">+44 </font><font color=\"#C0C0C0\">0</font><font
+        color=\"#FFFFFF\">20 7835 1500 </font><font color=\"#C0C0C0\">or (if you're
+        shy!)\r\n  <a href=\"emailus.htm\" class=\"email\"> email us</a><br>&nbsp;</p><!--webbot
+        bot=\"Include\" endspan i-checksum=\"64725\" --></td></tr></TABLE><SCRIPT
+        LANGUAGE=\"JavaScript\">\r\n<!--\r\nvar homepage=true;\r\n//--></SCRIPT>\r\n</div>\r\n<!--webbot
+        bot=\"Include\" U-Include=\"_includes/mainmenu.htm\" TAG=\"BODY\" startspan\r\n
+        \ --><SCRIPT LANGUAGE=\"JavaScript\">\r\n\r\nwindow.onerror = null;\r\nvar
+        topMargin = 160;\r\nvar slideTime = 600;\r\nvar ns6 = (!document.all && document.getElementById);\r\nvar
+        ie4 = (document.all);\r\nvar ns4 = (document.layers);\r\n\r\nfunction layerObject(id,left)\r\n{\r\n\tif
+        (ns6)\r\n\t{\r\n\t\tthis.obj = document.getElementById(id).style;\r\n\t\tthis.obj.left
+        = left;\r\n\t\treturn this.obj;\r\n\t}\r\n\telse if(ie4)\r\n\t{\r\n\t\tthis.obj
+        = document.all[id].style;\r\n\t\tthis.obj.left = left;\r\n\t\treturn this.obj;\r\n\t}\r\n\telse
+        if(ns4)\r\n\t{\r\n\t\tthis.obj = document.layers[id];\r\n\t\tthis.obj.left
+        = left;\r\n\t\treturn this.obj;\r\n   }\r\n}\r\n\r\nfunction layerSetup()\r\n{\r\n\tfloatLyr
+        = new layerObject('floatLayer', (pageWidth - 950) / 2);\r\n\twindow.setInterval(\"main()\",
+        15)\r\n}\r\n\r\nfunction floatObject()\r\n{\r\n\tif (ns4 || ns6)\r\n\t{\r\n\t\tfindHt
+        = window.innerHeight;\r\n\t}\r\n\telse if(ie4)\r\n\t{\r\n\t\tfindHt = document.body.clientHeight;\r\n
+        \  }\r\n}\r\n \r\nfunction main()\r\n{\r\n\tif (ns4)\r\n\t{\r\n\t\tthis.currentY
+        = document.layers[\"floatLayer\"].top;\r\n\t\tthis.scrollTop = window.pageYOffset;\r\n\t\tmainTrigger();\r\n\t}\r\n\telse
+        if(ns6)\r\n\t{\r\n\t\tthis.currentY = parseInt(document.getElementById('floatLayer').style.top);\r\n\t\tthis.scrollTop
+        = scrollY;\r\n\t\tmainTrigger();\r\n\t}\r\n\telse if(ie4)\r\n\t{\r\n\t\tthis.currentY
+        = floatLayer.style.pixelTop;\r\n\t\tthis.scrollTop = document.body.scrollTop;\r\n\t\tmainTrigger();\r\n
+        \  }\r\n}\r\n\r\nfunction mainTrigger()\r\n{\r\n\tif (ns4 || ns6)\r\n\t{\r\n\t\tfindHt
+        = window.innerHeight;\r\n\t\tpageWidth = innerWidth;\r\n\t}else if(ie4)\r\n\t{\r\n\t\tfindHt
+        = document.body.clientHeight;\r\n\t\tpageWidth = document.body.clientWidth;\r\n
+        \  }\r\n\tvar newTargetY = this.scrollTop + (findHt - 25);\r\n\tif ( this.currentY
+        != newTargetY )\r\n\t{\r\n\t\tif ( newTargetY != this.targetY )\r\n\t\t{\r\n\t\t\tthis.targetY
+        = newTargetY;\r\n\t\t\tfloatStart();\r\n\t\t}\r\n\t\tanimator();\r\n   }\r\n
+        \  \tfloatLyr.Left = (pageWidth - 950) / 2;\r\n\tif ( ie4 )document.all.floatLayer.style.pixelLeft
+        = floatLyr.Left;\r\n\tif ( ns4 )document.layers[\"floatLayer\"].left = floatLyr.Left;\r\n\tif
+        ( ns6 )document.getElementById('floatLayer').style.left = floatLyr.Left +
+        \"px\";\r\n}\r\n\r\nfunction floatStart()\r\n{\r\n\tvar now = new Date();\r\n\tthis.A
+        = this.targetY - this.currentY;\r\n\tthis.B = Math.PI / ( 2 * this.slideTime
+        );\r\n\tthis.C = now.getTime();\r\n\tif (Math.abs(this.A) > this.findHt)\r\n\t{\r\n\t\tthis.D
+        = this.A > 0 ? this.targetY - this.findHt : this.targetY + this.findHt;\r\n\t\tthis.A
+        = this.A > 0 ? this.findHt : -this.findHt;\r\n\t}\r\n\telse\r\n\t{\r\n\t\tthis.D
+        = this.currentY;\r\n   }\r\n}\r\n\r\nfunction animator()\r\n{\r\n\tvar now
+        = new Date();\r\n\tvar newY = this.A * Math.sin( this.B * ( now.getTime()
+        - this.C ) ) + this.D;\r\n\tnewY = Math.round(newY);\r\n\tif (( this.A > 0
+        && newY > this.currentY ) || ( this.A < 0 && newY < this.currentY ))\r\n\t{\r\n\t\tif
+        ( ie4 )document.all.floatLayer.style.pixelTop = newY;\r\n\t\tif ( ns4 )document.layers[\"floatLayer\"].top
+        = newY;\r\n\t\tif ( ns6 )document.getElementById('floatLayer').style.top =
+        newY + \"px\";\r\n   }\r\n}\r\n\r\nfunction start()\r\n{\r\n\tif(ns6||ns4)\r\n\t{\r\n\t\tpageWidth
+        = innerWidth;\r\n\t\tpageHeight = innerHeight;\r\n\t\tlayerSetup();\r\n\t\tfloatObject();\r\n\t}\r\n\telse
+        if(ie4)\r\n\t{\r\n\t\tpageWidth = document.body.clientWidth;\r\n\t\tpageHeight
+        = document.body.clientHeight;\r\n\t\tlayerSetup();\r\n\t\tfloatObject();\r\n
+        \  }\r\n}\r\n//-->\r\n</script>\r\n<div align=\"center\" id=\"floatLayer\"
+        style=\"position: absolute; height:20px; width:950px; left:20px; top:1000px;z-index:
+        1\">\r\n  <center>\r\n  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\"
+        height=\"25\" width=\"950\">\r\n    <tr>\r\n      <td align=\"center\">\r\n
+        \       <div align=\"center\">\r\n          <table border=\"0\" cellspacing=\"0\"
+        style=\"border-collapse: collapse\" bordercolor=\"#111111\" cellpadding=\"0\">\r\n
+        \           <tr>\r\n              <td align=\"center\" colspan=\"23\" background=\"images/spacer-grey.gif\"><img
+        border=\"0\" src=\"images/trans-spacer.gif\" width=\"2\" height=\"2\"></td>\r\n
+        \           </tr>\r\n            <tr>\r\n              <td align=\"center\"
+        colspan=\"23\" bgcolor=\"#CCCCCC\">\r\n              <img border=\"0\" \r\n
+        \             src=\"images/cccccc-shim.gif\" width=\"1\" height=\"1\"></td>\r\n
+        \           </tr>\r\n            <tr>\r\n              <td align=\"center\"
+        colspan=\"23\" background=\"images/spacer-grey.gif\"><img height=\"2\" width=\"2\"
+        border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n            </tr>\r\n
+        \           <tr>\r\n              <td align=\"center\" background=\"images/spacer-grey.gif\"><font
+        size=\"2\" face=\"Arial\"><a id=\"Mhome\" class=\"mainMenu\" href=\"default.htm\">home</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a id=\"Maboutus\" class=\"mainMenu\" href=\"aboutus.htm\">about
+        us</a></font></td>\r\n                            <td background=\"images/spacer-grey.gif\"><img
+        height=\"2\" width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n
+        \             <td align=\"center\" background=\"images/spacer-grey.gif\"><font
+        face=\"Arial\" size=\"2\"><a id=\"Mretail\" class=\"mainMenu\" href=\"retail-shop.htm\">retail
+        shop</a></font></td>\r\n                            <td background=\"images/spacer-grey.gif\"><img
+        height=\"2\" width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n
+        \             <td align=\"center\" background=\"images/spacer-grey.gif\"><font
+        face=\"Arial\" size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"
+        \ onMouseOver=\"if(homepage){MM_displayStatusMsg('Flowers');TM_swapImage('flowers','','images/homepg2/flowers_f2.gif',1);return
+        true;}\" id=\"Mflowers\" class=\"mainMenu\" href=\"flowers.htm\">flowers</a></font></td>\r\n
+        \                           <td background=\"images/spacer-grey.gif\"><img
+        height=\"2\" width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n
+        \             <td align=\"center\" background=\"images/spacer-grey.gif\"><font
+        face=\"Arial\" size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('orchids');\"
+        \ onMouseOver=\"if(homepage){MM_displayStatusMsg('Orchids');TM_swapImage('orchids','','images/homepg2/orchids_f2.gif',1);return
+        true;}\" id=\"Morchids\" class=\"mainMenu\" href=\"orchids.htm\">orchids</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"  onMouseOver=\"if(homepage){MM_displayStatusMsg('Trees');TM_swapImage('trees','','images/homepg2/trees_f2.gif',1);return
+        true;}\" id=\"Mtrees\" class=\"mainMenu\" href=\"trees.htm\">trees</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a id=\"Mplants\" class=\"mainMenu\" href=\"plants.htm\">plants</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"  onMouseOver=\"if(homepage){MM_displayStatusMsg('Fruit');TM_swapImage('fruit','','images/homepg2/fruit_f2.gif',1);return
+        true;}\" id=\"Mfruit\" class=\"mainMenu\" href=\"fruit.htm\">fruit</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"  onMouseOver=\"if(homepage){MM_displayStatusMsg('Pots');TM_swapImage('pots','','images/homepg2/pots_f2.gif',1);return
+        true;}\" id=\"Mpots\" class=\"mainMenu\" href=\"pots.htm\">pots</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"  onMouseOver=\"if(homepage){MM_displayStatusMsg('Bonsai');TM_swapImage('bonsai','','images/homepg2/bonsai_f2.gif',1);return
+        true;}\" id=\"Mbonsai\" class=\"mainMenu\" href=\"bonsai.htm\">bonsai</a></font></td>\r\n
+        \             <td background=\"images/spacer-grey.gif\"><img height=\"2\"
+        width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n              <td
+        align=\"center\" background=\"images/spacer-grey.gif\"><font face=\"Arial\"
+        size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"  onMouseOver=\"if(homepage){MM_displayStatusMsg('Boxwood');TM_swapImage('boxwood','','images/homepg2/boxwood_f2.gif',1);return
+        true;}\" id=\"Mboxwood\" class=\"mainMenu\" href=\"boxwood-topiary.htm\">boxwood
+        topiary</a></font></td>\r\n              <td background=\"images/spacer-grey.gif\"><img
+        height=\"2\" width=\"25\" border=\"0\" src=\"images/trans-spacer.gif\"></td>\r\n\r\n
+        \             <td align=\"center\" background=\"images/spacer-grey.gif\"><font
+        face=\"Arial\" size=\"2\"><a onMouseOut=\"if(homepage)TM_swapImgRestore('flowers');\"
+        \ onMouseOver=\"if(homepage){MM_displayStatusMsg('Commercial');TM_swapImage('commercial','','images/homepg2/commercial_f2.gif',1);return
+        true;}\" id=\"Mcommercial\" class=\"mainMenu\" href=\"commercial.htm\">commercial\r\n
+        \               projects</a></font></td>\r\n            </tr>\r\n          </table>\r\n
+        \       </div>\r\n      </td>\r\n    </tr><tr><td><img border=\"0\" height=\"4\"
+        src=\"images/trans-spacer.gif\"></td></tr>\r\n  </table>\r\n  </center>\r\n</div><!--webbot
+        bot=\"Include\" endspan i-checksum=\"14549\"\r\n  -->\r\n</body>\r\n\r\n</html>"
+    http_version: 
+  recorded_at: Sun, 08 Feb 2015 16:31:33 GMT
+recorded_with: VCR 2.9.3
