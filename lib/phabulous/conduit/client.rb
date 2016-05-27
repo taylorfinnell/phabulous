@@ -6,6 +6,8 @@ module Phabulous
     class Client
       include ::HTTParty
 
+      Error = Class.new(RuntimeError)
+
       attr_accessor :host, :user, :cert, :token, :session
 
       def initialize(_host = Phabulous.configuration.host,
@@ -38,7 +40,7 @@ module Phabulous
         if response.parsed_response['result']
           response.parsed_response['result']
         else
-          raise StandardError, "Conduit error: #{response.parsed_response['error_info']}"
+          raise Error, "Conduit error: #{response.parsed_response['error_info']}"
         end
       end
 
@@ -55,7 +57,7 @@ module Phabulous
       def connection_payload
         {
           'client' => "phabulous gem",
-          'clientVersion' => "1.0.0",
+          'clientVersion' => Phabulous::VERSION,
           'user' => self.user,
           'host' => self.host,
           'authToken' => self.token,

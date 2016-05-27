@@ -5,11 +5,12 @@ module Phabulous
     describe Client do
       describe 'auth_signature' do
         before do
-          @client = Conduit::Client.new('https://phab.enlightenment.org/', 'user', 'cert')
+          @client = Conduit::Client.new
         end
 
         it 'is the sha1 digest of the conduit token and cert' do
           expect(@client).to receive(:token).and_return('token')
+          expect(@client).to receive(:cert).and_return('cert')
 
           # sha1(tokencert)
           #  => 29ee2e11163771d305e17e3b3bbde765673f7fd8
@@ -19,7 +20,7 @@ module Phabulous
 
       describe 'connection_payload' do
         before do
-          @client = Conduit::Client.new('https://phab.enlightenment.org/', 'user', 'cert')
+          @client = Conduit::Client.new
         end
 
         it 'has a conduit name' do
@@ -51,19 +52,21 @@ module Phabulous
 
       describe 'ping' do
         it 'raises an error on an unsucessful ping' do
-          client = Conduit::Client.new('http://fake.com', 'fake', 'fake')
+          client = Conduit::Client.new(test_phabricator_host, 'fake', 'fake')
 
           expect {
             VCR.use_cassette('raises_conduit_errors_on_ping') do
+              client.connect
               client.ping
             end
-          }.to raise_exception
+          }.to raise_exception(Client::Error)
         end
 
         it 'pings conduit' do
           client = Conduit::Client.new
 
           result = VCR.use_cassette('should_ping_conduit') do
+            client.connect
             client.ping
           end
 
@@ -107,7 +110,7 @@ module Phabulous
 
       describe 'post_body' do
         it 'does not include session if session is nil' do
-          client = Conduit::Client.new('url', 'user', 'key')
+          client = Conduit::Client.new('url', test_phabricator_user, 'key')
           data_to_sign = {a: 1}
 
           session = nil
@@ -119,7 +122,7 @@ module Phabulous
         end
 
         it 'signs the request data with the session if the session exists' do
-          client = Conduit::Client.new('url', 'user', 'key')
+          client = Conduit::Client.new('url', test_phabricator_user, 'key')
           data_to_sign = {a: 1}
 
           session = double('session',
@@ -135,13 +138,13 @@ module Phabulous
 
       describe '#request' do
         it 'raises errors when conduit erorrs' do
-          client = Conduit::Client.new('https://fake.fake.com/', 'fake', 'fake_cert')
+          client = Conduit::Client.new(test_phabricator_host, 'fake', 'fake_cert')
 
           expect {
             VCR.use_cassette('raises_conduit_errors') do
               client.request('conduit.connect')
             end
-          }.to raise_exception
+          }.to raise_exception(Client::Error)
         end
 
         it 'can make authorized requests' do
@@ -151,7 +154,7 @@ module Phabulous
             client.connect
 
             results = client.request('differential.query', ids: [1])
-            expect(results.first["id"].to_i).to eq(1)
+            expect(results).to eq([])
           end
         end
       end

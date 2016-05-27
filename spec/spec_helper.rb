@@ -7,6 +7,14 @@ def conduit_test_key
   @conduit_test_key ||= File.read(File.join(File.dirname(File.expand_path(__FILE__)), 'data', '.arcrc')).chomp!
 end
 
+def test_phabricator_host
+  "http://127.0.0.1:8080"
+end
+
+def test_phabricator_user
+  'phabricator'
+end
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/vcr'
   config.hook_into :webmock
@@ -15,7 +23,7 @@ VCR.configure do |config|
 end
 
 Phabulous.configure do |config|
-  config.host = 'http://192.168.0.3:8081'
-  config.user = 'user'
+  config.host = test_phabricator_host
+  config.user = test_phabricator_user
   config.cert = conduit_test_key
 end
