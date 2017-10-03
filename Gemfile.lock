@@ -1,28 +1,28 @@
 PATH
   remote: .
   specs:
-    phabulous (0.0.1)
+    phabulous (0.0.2)
       httparty (~> 0.13)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.4.0)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     coderay (1.1.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
-    hashdiff (0.3.0)
-    httparty (0.13.7)
-      json (~> 1.8)
+    hashdiff (0.3.6)
+    httparty (0.15.6)
       multi_xml (>= 0.5.2)
-    json (1.8.3)
     method_source (0.8.2)
-    multi_xml (0.5.5)
+    multi_xml (0.6.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (3.0.0)
     rake (10.5.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -39,8 +39,7 @@ GEM
     rspec-support (3.4.1)
     safe_yaml (1.0.4)
     slop (3.6.0)
-    vcr (3.0.3)
-    webmock (2.0.3)
+    webmock (3.0.1)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
@@ -54,5 +53,7 @@ DEPENDENCIES
   pry (~> 0.10)
   rake (~> 10.0)
   rspec (~> 3.4)
-  vcr (~> 3.0)
-  webmock (~> 2.0)
+  webmock (~> 3.0.1)
+
+BUNDLED WITH
+   1.15.4

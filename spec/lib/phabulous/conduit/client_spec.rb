@@ -3,118 +3,116 @@ require 'spec_helper'
 module Phabulous
   module Conduit
     describe Client do
-      describe 'auth_signature' do
-        before do
-          @client = Conduit::Client.new
-        end
+      let(:subject) { Conduit::Client.new }
 
+      before(:each) do
+        stub_request(:post, File.join(Phabulous.configuration.host, 'api/conduit.connect'))
+          .to_return(status: 200, body: { result: double(:result) }.to_json, headers: { content_type: 'application/json' })
+      end
+
+      describe '#auth_signature' do
         it 'is the sha1 digest of the conduit token and cert' do
-          expect(@client).to receive(:token).and_return('token')
-          expect(@client).to receive(:cert).and_return('cert')
+          expect(subject).to receive(:token).and_return('token')
+          expect(subject).to receive(:cert).and_return('cert')
 
           # sha1(tokencert)
           #  => 29ee2e11163771d305e17e3b3bbde765673f7fd8
-          expect(@client.send(:auth_signature)).to eq('29ee2e11163771d305e17e3b3bbde765673f7fd8')
+          expect(subject.send(:auth_signature)).to eq('29ee2e11163771d305e17e3b3bbde765673f7fd8')
         end
       end
 
-      describe 'connection_payload' do
-        before do
-          @client = Conduit::Client.new
-        end
-
+      describe '#connection_payload' do
         it 'has a conduit name' do
-          expect(@client.send(:connection_payload)['client']).to be
+          expect(subject.send(:connection_payload)['client']).to be
         end
 
         it 'has a conduit version' do
-          expect(@client.send(:connection_payload)['clientVersion']).to be
+          expect(subject.send(:connection_payload)['clientVersion']).to be
         end
 
         it 'has a user' do
-          expect(@client.send(:connection_payload)['user']).to be
+          expect(subject.send(:connection_payload)['user']).to be
         end
 
         it 'has a host' do
-          expect(@client.send(:connection_payload)['host']).to be
+          expect(subject.send(:connection_payload)['host']).to be
         end
 
         it 'has a authToken' do
-          expect(@client).to receive(:token).twice.and_return('token')
+          expect(subject).to receive(:token).twice.and_return('token')
 
-          expect(@client.send(:connection_payload)['authToken']).to be
+          expect(subject.send(:connection_payload)['authToken']).to be
         end
 
         it 'has a authSignature' do
-          expect(@client.send(:connection_payload)['authSignature']).to be
+          expect(subject.send(:connection_payload)['authSignature']).to be
         end
       end
 
-      describe 'ping' do
+      describe '#ping' do
         it 'raises an error on an unsucessful ping' do
-          client = Conduit::Client.new(test_phabricator_host, 'fake', 'fake')
+          response = {
+            result: nil,
+            error_code: 'ERR-INVALID-USER',
+            error_info: 'The username you are attempting to authenticate with is not valid.'
+          }.to_json
+
+          client = Conduit::Client.new(Phabulous.configuration.host, 'fake', 'fake')
+
+          stub_request(:post, File.join(Phabulous.configuration.host, 'api/conduit.connect'))
+            .to_return(status: 200, body: response, headers: { content_type: 'application/json' })
 
           expect {
-            VCR.use_cassette('raises_conduit_errors_on_ping') do
-              client.connect
-              client.ping
-            end
+            client.connect
+            client.ping
           }.to raise_exception(Client::Error)
         end
 
         it 'pings conduit' do
-          client = Conduit::Client.new
+          response = { result: Phabulous.configuration.host, error_code: nil, error_info: nil }.to_json
 
-          result = VCR.use_cassette('should_ping_conduit') do
-            client.connect
-            client.ping
-          end
+          stub_request(:post, File.join(Phabulous.configuration.host, 'api/conduit.ping'))
+            .to_return(status: 200, body: response, headers: { content_type: 'application/json' })
 
-          expect(result).to be_a(String)
+          subject.connect
+
+          expect(subject.ping).to be_a(String)
         end
       end
 
       describe '#connect' do
-        before do
-          @client = Conduit::Client.new
-        end
-
         it 'should set the session' do
-          VCR.use_cassette('should_set_the_session') do
-            @client.connect
-          end
+          subject.connect
 
-          expect(@client.session).to be_a(Session)
+          expect(subject.session).to be_a(Session)
         end
 
         it 'sets the token' do
           # not tested here, stub it
-          expect(@client).to receive(:request)
+          expect(subject).to receive(:request)
 
-          @client.connect
+          subject.connect
 
-          expect(@client.token).to be
+          expect(subject.token).to be
         end
 
         it 'connects with the connection payload' do
-          fake_connection_payload = double
+          payload = double(:payload)
 
-          expect(@client).to receive(:connection_payload).and_return(fake_connection_payload)
+          expect(subject).to receive(:connection_payload).and_return(payload)
+          expect(subject).to receive(:request).with('conduit.connect', payload)
 
-          expect(@client).to receive(:request).with('conduit.connect',
-                                                     fake_connection_payload)
-
-          @client.connect
+          subject.connect
         end
       end
 
-      describe 'post_body' do
+      describe '#post_body' do
         it 'does not include session if session is nil' do
-          client = Conduit::Client.new('url', test_phabricator_user, 'key')
+          client = Conduit::Client.new('url', 'user', 'key')
+
           data_to_sign = {a: 1}
 
-          session = nil
-          expect(client).to receive(:session).and_return(session)
+          expect(client).to receive(:session).and_return(nil)
 
           signed_data = client.send(:post_body, data_to_sign)
 
@@ -122,7 +120,7 @@ module Phabulous
         end
 
         it 'signs the request data with the session if the session exists' do
-          client = Conduit::Client.new('url', test_phabricator_user, 'key')
+          client = Conduit::Client.new('url', 'user', 'key')
           data_to_sign = {a: 1}
 
           session = double('session',
@@ -138,24 +136,29 @@ module Phabulous
 
       describe '#request' do
         it 'raises errors when conduit erorrs' do
-          client = Conduit::Client.new(test_phabricator_host, 'fake', 'fake_cert')
+          response = {
+            result: nil,
+            error_code: 'ERR-INVALID-USER',
+            error_info: 'The username you are attempting to authenticate with is not valid.'
+          }.to_json
 
-          expect {
-            VCR.use_cassette('raises_conduit_errors') do
-              client.request('conduit.connect')
-            end
-          }.to raise_exception(Client::Error)
+          client = Conduit::Client.new(Phabulous.configuration.host, 'fake', 'fake_cert')
+
+          stub_request(:post, File.join(Phabulous.configuration.host, 'api/conduit.connect'))
+            .to_return(status: 200, body: response, headers: { content_type: 'application/json' })
+
+          expect { client.request('conduit.connect') }.to raise_exception(Client::Error)
         end
 
         it 'can make authorized requests' do
-          client = Conduit::Client.new
+          response = { result: [{ test: true }], error_code: nil, error_info: nil }.to_json
 
-          VCR.use_cassette('can_make_authorized_requests') do
-            client.connect
+          stub_request(:post, File.join(Phabulous.configuration.host, 'api/differential.query'))
+            .to_return(status: 200, body: response, headers: { content_type: 'application/json' })
 
-            results = client.request('differential.query', ids: [1])
-            expect(results).to eq([])
-          end
+          subject.connect
+
+          expect(subject.request('differential.query', ids: [1])).to eq([{ 'test' => true }])
         end
       end
     end
