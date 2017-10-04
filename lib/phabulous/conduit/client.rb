@@ -10,11 +10,12 @@ module Phabulous
 
       attr_accessor :host, :user, :cert, :token, :session
 
-      def initialize(_host = Phabulous.configuration.host,
-                     _user = Phabulous.configuration.user, _cert = Phabulous.configuration.cert)
-        self.host = _host
-        self.user = _user
-        self.cert = _cert
+      def initialize(host = Phabulous.configuration.host,
+                     user = Phabulous.configuration.user,
+                     cert = Phabulous.configuration.cert)
+        self.host = host
+        self.user = user
+        self.cert = cert
         self.session = nil
       end
 
@@ -29,13 +30,14 @@ module Phabulous
           self.session = Conduit::Session.new(result['connectionID'], result['sessionKey'])
         end
 
-        self.session
+        session
       end
 
       def request(method, data = {})
-        post_body = post_body(data)
-        response = self.class.post("#{self.host}/api/#{method}", body: post_body,
-                                   :headers => { 'Content-Type' => 'application/json' } )
+        response = self.class.post(
+          File.join(host, 'api', method),
+          body: post_body(data), headers: { 'Content-Type' => 'application/json' }
+        )
 
         if response.parsed_response['result']
           response.parsed_response['result']
@@ -47,9 +49,7 @@ module Phabulous
       protected
 
       def post_body(data)
-        if session
-          data.merge!(__conduit__: self.session.to_hash)
-        end
+        data[:__conduit__] = session.to_hash if session
 
         { params: data.to_json, output: 'json' }
       end
@@ -61,12 +61,12 @@ module Phabulous
           'user' => self.user,
           'host' => self.host,
           'authToken' => self.token,
-          'authSignature' => auth_signature,
+          'authSignature' => auth_signature
         }
       end
 
       def auth_signature
-        Digest::SHA1.hexdigest("#{self.token}#{self.cert}")
+        Digest::SHA1.hexdigest("#{token}#{cert}")
       end
     end
   end

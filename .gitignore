@@ -12,6 +12,7 @@
 *.o
 *.a
 mkmf.log
+.env
 .DS_Store
 lib/.DS_Store
 spec/.DS_Store
